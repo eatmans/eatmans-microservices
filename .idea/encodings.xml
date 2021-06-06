@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/em-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/em-config/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/em-eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/em-example/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/em-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/em-oauth/src/main/java" charset="UTF-8" />
   </component>

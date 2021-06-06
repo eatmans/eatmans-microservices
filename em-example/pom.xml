@@ -9,14 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>em-config</artifactId>
-
+    <artifactId>em-example</artifactId>
 
     <dependencies>
 
+
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-server</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
         <dependency>
@@ -30,5 +30,6 @@
         </dependency>
 
     </dependencies>
+
 
 </project>

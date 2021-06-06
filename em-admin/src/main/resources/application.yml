@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: em-admin
+  security:
+    user:
+      name: "admin"
+      password: "admin"
+server:
+  port: 8803
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://admin:admin@localhost:8801}/eureka/
+  instance:
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+    lease-renewal-interval-in-seconds: 10
+    health-check-url-path: /actuator/health
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true     #访问路径可以显示IP地址
+    ip-address: 127.0.0.1
+    non-secure-port: 8803
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

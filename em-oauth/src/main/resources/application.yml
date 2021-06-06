@@ -1,0 +1,29 @@
+server:
+  port: 8805
+spring:
+  application:
+    name: em-oauth
+eureka:
+  client: #客户端注册进eureka服务列表内
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://admin:admin@localhost:8801/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true     #访问路径可以显示IP地址
+    ip-address: 127.0.0.1
+    non-secure-port: 8805
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+info: eatmans

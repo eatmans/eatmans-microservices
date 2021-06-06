@@ -1,0 +1,41 @@
+server:
+  port: 8802
+
+spring:
+  application:
+    name: em-config
+  profiles:
+    active: native # 使用本地配置
+  # 配置中心
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config/
+
+# 注册中心配置
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      defaultZone: http://admin:admin@localhost:8801/eureka
+    healthcheck:
+      enabled: true
+  instance:
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true     #访问路径可以显示IP地址
+    ip-address: 127.0.0.1
+    non-secure-port: 8802
+    # 默认 30 秒 这里是为了开发是可以快速移除失效服务
+    lease-renewal-interval-in-seconds: 5
+    # 默认 90 秒 这里是为了开发是可以快速移除失效服务
+    lease-expiration-duration-in-seconds: 5
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

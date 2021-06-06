@@ -1,20 +1,20 @@
-package com.eatmans.eureka;
+package com.eatmans.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author eatmans
  * @version 1.0
- * @date 2021/6/4
+ * @date 2021/6/5
  */
-@EnableEurekaServer
+@EnableDiscoveryClient
 @SpringBootApplication
-public class EurekaApplication {
+public class ExampleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaApplication.class, args);
+        SpringApplication.run(ExampleApplication.class, args);
     }
 
 }
