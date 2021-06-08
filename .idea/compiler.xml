@@ -6,12 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="em-example" />
         <module name="em-config" />
         <module name="em-admin" />
+        <module name="em-eureka" />
         <module name="em-common" />
         <module name="em-gateway" />
-        <module name="em-eureka" />
+        <module name="em-example" />
         <module name="em-oauth" />
       </profile>
     </annotationProcessing>
